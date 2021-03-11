@@ -1,8 +1,6 @@
 # SVO-Note
 SVO源码注释，半直接法VO。
 
-[知乎专栏](https://www.zhihu.com/column/c_1344713922587365377)
-
 SVO（Semi-direct monocular Visual Odometry），半直接法视觉里程计，只有前端。它结合了特征点和直接法，取特征点周围块的像素点用直接法进行跟踪，而不是跟踪所有的像素点。对于前端，包括典型的frame-to-frame，frame-to-map跟踪。对于建图部分，维护逆深度的分布（均值、方差），每次新来一帧，根据极线约束寻找投影点，然后三角化，更新逆深度的均值与方差，直到方差较小，认为该点的逆深度值比较准确了，便不再更新。主要知识点包括：
 
 - 直接法，最小化光度误差，雅可比的构造
@@ -19,3 +17,5 @@ SVO（Semi-direct monocular Visual Odometry），半直接法视觉里程计，�
 深度滤波示意图
 
 ![Image](https://github.com/smilefacehh/SVO-Note/blob/main/depthfilter.png)
+
+[知乎文章](https://www.zhihu.com/column/c_1344713922587365377)
